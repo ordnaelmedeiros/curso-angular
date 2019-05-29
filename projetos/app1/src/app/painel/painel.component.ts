@@ -29,7 +29,7 @@ export class PainelComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
   ngOnDestroy(): void {
-    console.log("Removido");
+    //console.log("Removido");
   }
 
 
@@ -39,7 +39,7 @@ export class PainelComponent implements OnInit, OnDestroy {
   }
 
   public verificarResposta(): void {
-    console.log("Verificar resposta: ", this.resposta);
+    //console.log("Verificar resposta: ", this.resposta);
     if (this.rodadaFrase.frasePtBr.toLocaleLowerCase() == this.resposta.toLocaleLowerCase()) {
       alert("Atradução está correta");
       this.proximaRodada();

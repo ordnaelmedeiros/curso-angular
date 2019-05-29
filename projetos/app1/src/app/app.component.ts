@@ -8,15 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   public jogoEmAndamento: boolean = true;
+  public tipoEncerramento: string;
 
   public encerrarJogo(tipo: string) :void {
-    console.log(tipo);
-    if (tipo=="vitoria") {
-      alert("Você concluiu as traduções com sucesso");
-    } else {
-      alert("Você perdeu todas as tentativas");
-      this.jogoEmAndamento = false;
-    }
+    //console.log(tipo);
+    this.tipoEncerramento = tipo;
+    this.jogoEmAndamento = false;
+  }
+
+  public reiniciarJogo(): void {
+    this.jogoEmAndamento = true;
+    this.tipoEncerramento = undefined;
   }
 
 }
