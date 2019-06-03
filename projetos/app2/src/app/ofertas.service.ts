@@ -53,8 +53,25 @@ export class OfertasService {
         }
     ];
 
-    public getOfertas(): Oferta[] {
-        return this.ofertas;
+    public getOfertas(): Promise<Oferta[]> {
+        return new Promise((resolve, reject) => {
+            let deu_certo = true;
+            if (deu_certo) {
+                setTimeout(() => resolve(this.ofertas), 3000);
+            } else {
+                reject({
+                    codigo_erro: 404,
+                    mensagem_erro: 'Servidor não encontrado'
+                });
+            }
+        })
+        .then((ofertas: Oferta[]) => {
+            return new Promise((resolve) => {
+                setTimeout(() => resolve(this.ofertas), 3000);
+            }).then(() => {
+                return ofertas;
+            });
+        });
     }
 
 }
