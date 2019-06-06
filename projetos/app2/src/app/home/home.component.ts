@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       }).catch(( erro: any ) => {
         console.log(erro);
       });
-    console.log("ofertas:", this.ofertas);
+    //console.log("ofertas:", this.ofertas);
   }
 
 }
