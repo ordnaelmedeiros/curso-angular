@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
 import { Subject, Observable, of } from 'rxjs';
@@ -14,6 +14,8 @@ import { switchMap, debounceTime, distinctUntilChanged, catchError } from 'rxjs/
   ]
 })
 export class TopoComponent implements OnInit {
+
+  @ViewChild('termoDaPesquisa') txtTermoDaPesquisa: ElementRef;
 
   public ofertas: Oferta[];
   private obserbleOfertas: Observable<Oferta[]>
@@ -60,6 +62,13 @@ export class TopoComponent implements OnInit {
         () => console.log('Fluxo de eventos completo')
       )
       */
+  }
+
+  public limpaPesquisa(): void {
+    
+    this.txtTermoDaPesquisa.nativeElement.value = '';
+    this.subjectPesquisa.next('');
+
   }
 
 }
