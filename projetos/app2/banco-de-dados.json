@@ -192,6 +192,13 @@
       "complemento": "10",
       "formaPagamento": "dinheiro",
       "id": 1
+    },
+    {
+      "endereco": "Silvio Silva Jardim 894, Casa 4",
+      "numero": "894",
+      "complemento": "sss",
+      "formaPagamento": "dinheiro",
+      "id": 2
     }
   ]
 }
