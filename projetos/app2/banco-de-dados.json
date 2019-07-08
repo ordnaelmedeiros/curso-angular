@@ -199,6 +199,13 @@
       "complemento": "sss",
       "formaPagamento": "dinheiro",
       "id": 2
+    },
+    {
+      "endereco": "Rua teste",
+      "numero": "10",
+      "complemento": "Teste",
+      "formaPagamento": "dinheiro",
+      "id": 3
     }
   ]
 }
