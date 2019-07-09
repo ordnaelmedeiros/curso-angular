@@ -4,6 +4,7 @@ import { Oferta } from '../shared/oferta.model';
 import { Subject, Observable, of } from 'rxjs';
 
 import { switchMap, debounceTime, distinctUntilChanged, catchError } from 'rxjs/operators';
+import { CarrinhoService } from '../carrinho.service';
 
 @Component({
   selector: 'app-topo',
@@ -23,6 +24,7 @@ export class TopoComponent implements OnInit {
 
   constructor(
     private ofertasService: OfertasService,
+    public carrinhoService: CarrinhoService
   ) { }
 
   ngOnInit() {

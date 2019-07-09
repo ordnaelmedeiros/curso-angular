@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Oferta } from '../shared/oferta.model';
 import { OfertasService } from '../ofertas.service';
 import { ActivatedRoute, Params } from '@angular/router';
-import CarrinhoService from '../carrinho.service';
+import { CarrinhoService } from '../carrinho.service';
 
 @Component({
   selector: 'app-oferta',
   templateUrl: './oferta.component.html',
   styleUrls: ['./oferta.component.css'],
   providers: [
-    OfertasService,
-    CarrinhoService
+    OfertasService
   ]
 })
 export class OfertaComponent implements OnInit {
