@@ -187,25 +187,33 @@
   ],
   "pedidos": [
     {
-      "endereco": "Rua Teste1",
-      "numero": "10",
-      "complemento": "10",
-      "formaPagamento": "dinheiro",
-      "id": 1
-    },
-    {
-      "endereco": "Silvio Silva Jardim 894, Casa 4",
+      "endereco": "Rua Silva Jardim",
       "numero": "894",
-      "complemento": "sss",
-      "formaPagamento": "dinheiro",
-      "id": 2
-    },
-    {
-      "endereco": "Rua teste",
-      "numero": "10",
-      "complemento": "Teste",
-      "formaPagamento": "dinheiro",
-      "id": 3
+      "complemento": "Ultima quadra",
+      "formaPagamento": "debito",
+      "itens": [
+        {
+          "id": 2,
+          "img": {
+            "url": "/assets/ofertas/2/img1.jpg"
+          },
+          "titulo": "Cozinha Mexicana",
+          "descricao_oferta": "Almoço ou Jantar com Rodízio Mexicano delicioso.",
+          "valor": 32.9,
+          "quantidade": 2
+        },
+        {
+          "id": 5,
+          "img": {
+            "url": "/assets/ofertas/5/img1.jpg"
+          },
+          "titulo": "Kart",
+          "descricao_oferta": "Bateria de Kart de 30 minutos.",
+          "valor": 54.9,
+          "quantidade": 1
+        }
+      ],
+      "id": 1
     }
   ]
 }

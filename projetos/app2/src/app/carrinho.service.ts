@@ -5,6 +5,11 @@ class CarrinhoService {
 
     private itens: ItemCarrinho[] = [];
 
+
+    public limparCarrinho() {
+        this.itens = [];
+    }
+
     public exibirItens(): ItemCarrinho[] {
         return this.itens;
     }
