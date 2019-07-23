@@ -46,6 +46,7 @@ export class Bd {
 
             //consultar as publicações (database)
             firebase.database().ref(`publicacoes/${btoa(emailUsuario)}`)
+            .orderByKey()
             .once('value')
             .then((snapshot: any) => {
                 //console.log(snapshot.val())
@@ -54,29 +55,43 @@ export class Bd {
 
                 snapshot.forEach((childSnapshot: any) => {
 
-                    let publicacao = childSnapshot.val()
-                    
-                    //consultar a url da imagem (storage)
+                    let publicacao = childSnapshot.val();
+                    publicacao.key = childSnapshot.key;
+                    publicacoes.push(publicacao);
+
+                });
+
+                return publicacoes.reverse();
+
+
+            }).then((publicacoes:any) => {
+                
+                publicacoes.forEach((publicacao: any) => {
+
                     firebase.storage().ref()
-                        .child(`imagens/${childSnapshot.key}`)
+                        .child(`imagens/${publicacao.key}`)
                         .getDownloadURL()
                         .then((url: string) => {
                             
                             publicacao.url_imagem = url
 
                             //consultar o nome do usuário
-                            firebase.database().ref(`usuario_detalhe/${btoa(emailUsuario)}`)
+                            firebase.database().ref(`usuarios_detalhe/${btoa(emailUsuario)}`)
                                 .once('value')
                                 .then((snapshot: any) => {
-                                    
                                     publicacao.nome_usuario = snapshot.val().nome_usuario
-
-                                    publicacoes.push(publicacao)
+                                    //publicacoes.push(publicacao)
                                 })
+
                         })
+
                 })
-                resolve(publicacoes)
+
+                
+                resolve(publicacoes);
+                
             })
+
 
         })
 
